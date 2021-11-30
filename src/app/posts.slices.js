@@ -222,7 +222,9 @@ const postsSlice = createSlice({
       })
       .addCase(IncrementCommentCounter.fulfilled, (state, action) => {
         state.posts = state.posts.map((post) => {
-          if (post.id === action.payload.id) {
+          if (post.id === action.payload) {
+            console.log('action.payload');
+            console.log(action.payload);
             return action.payload;
           }
           return post;

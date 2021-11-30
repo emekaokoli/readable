@@ -70,8 +70,9 @@ const commentsSlice = createSlice({
         state.loading = false;
       })
       .addCase(Get.rejected, (state, action) => {
-        state.error = action.error;
+        state.error = action.error.stack;
         state.loading = false;
+         state.comments = []
       })
       .addCase(GetByParent.pending, (state, action) => {
         state.loading = true;
@@ -81,8 +82,9 @@ const commentsSlice = createSlice({
         state.loading = false;
       })
       .addCase(GetByParent.rejected, (state, action) => {
-        state.error = action.error;
+        state.error = action.error.message;
         state.loading = false;
+        state.comments = [];
       })
       .addCase(Add.pending, (state, action) => {
         state.loading = true;
@@ -92,8 +94,9 @@ const commentsSlice = createSlice({
         state.loading = false;
       })
       .addCase(Add.rejected, (state, action) => {
-        state.error = action.error;
+        state.error = action.error.message;
         state.loading = false;
+        state.comments = [];
       })
       .addCase(Vote.pending, (state, action) => {
         state.loading = true;
@@ -108,8 +111,9 @@ const commentsSlice = createSlice({
         state.loading = false;
       })
       .addCase(Vote.rejected, (state, action) => {
-        state.error = action.error;
+        state.error = action.error.message;
         state.loading = false;
+        state.comments = [];
       })
       .addCase(DisableByParent.pending, (state, action) => {
         state.loading = true;
@@ -121,8 +125,9 @@ const commentsSlice = createSlice({
         state.loading = false;
       })
       .addCase(DisableByParent.rejected, (state, action) => {
-        state.error = action.error;
+        state.error = action.error.message;
         state.loading = false;
+        state.comments = [];
       })
       .addCase(Disable.pending, (state, action) => {
         state.loading = true;
@@ -134,8 +139,9 @@ const commentsSlice = createSlice({
         state.loading = false;
       })
       .addCase(Disable.rejected, (state, action) => {
-        state.error = action.error;
+        state.error = action.error.message;
         state.loading = false;
+        state.comments = [];
       })
       .addCase(Edit.pending, (state, action) => {
         state.loading = true;
@@ -150,8 +156,9 @@ const commentsSlice = createSlice({
         state.loading = false;
       })
       .addCase(Edit.rejected, (state, action) => {
-        state.error = action.error;
+        state.error = action.error.message;
         state.loading = false;
+        state.comments = [];
       });
   },
 });
